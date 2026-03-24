@@ -352,6 +352,8 @@ GameObject:
   - component: {fileID: 1479718381}
   - component: {fileID: 1479718383}
   - component: {fileID: 1479718384}
+  - component: {fileID: 1479718385}
+  - component: {fileID: 1479718386}
   m_Layer: 0
   m_Name: personaje
   m_TagString: Untagged
@@ -494,9 +496,43 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.11229277, y: -0.000000059604645}
-  m_Size: {x: 0.58791447, y: 1.1950029}
+  m_Offset: {x: -0.11229277, y: 0.008020878}
+  m_Size: {x: 0.58791447, y: 0.79395723}
   m_Direction: 0
+--- !u!95 &1479718385
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479718380}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cc2d8119b5627544ea666062be73e0d1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1479718386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479718380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9672958ba558eff4091767f5667cfa06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::mobpersonaje
 --- !u!1 &1557495474
 GameObject:
   m_ObjectHideFlags: 0
