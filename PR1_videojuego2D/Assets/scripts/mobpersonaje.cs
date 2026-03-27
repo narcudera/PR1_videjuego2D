@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class mobpersonaje : MonoBehaviour
 {
@@ -11,36 +12,59 @@ public class mobpersonaje : MonoBehaviour
 
     int MiVida = 0;
 
-    
+    public float velocidad = 0.01f;
+    public float impulsoSalto = 1.0f;
+
+    Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-      int SumaEntreDecenas = Sumar(10,20);  
-    
-      Debug.Log("Inicio");
-      Debug.Log(SumaEntreDecenas);
-      Debug.Log(this.transform.position.x);
+
+    rb = GetComponent<Rigidbody2D>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Final");
-        if(MiVida > 0)
-        {Debug.Log("Estoy Vivo");}
-        else{Debug.Log("Estoy Mortaja");}
+
+   
+
+        Vector2 moveInput = InputSystem.actions["Move"].ReadValue<Vector2>();
+    
+        this.transform.Translate(moveInput.x*velocidad,0,0);
+
+
+        if(moveInput.x < 0)
+        {
+            this.GetComponent<SpriteRenderer>().flipX = true;
+        } 
+        else if(moveInput.x > 0)
+        {
+            this.GetComponent<SpriteRenderer>().flipX = false; 
+        }
+       
+
+        bool salto = InputSystem.actions["Jump"].WasPressedThisFrame();
+
+        if(salto == true)
+        {
+         Debug.Log("salto");    
+         rb.AddForce(transform.up*impulsoSalto,ForceMode2D.Impulse);
+         
+        }
+   
+   
+        
+
+
     }
 
-    
+  
 
 
 
-    int Sumar (int num1, int num2)
-{
-       int suma = num1 + num2;
 
-       return suma; 
-     
-}
+
 }

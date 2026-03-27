@@ -461,7 +461,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &1479718384
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -533,6 +533,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9672958ba558eff4091767f5667cfa06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::mobpersonaje
+  velocidad: 0.01
+  impulsoSalto: 5
 --- !u!1 &1557495474
 GameObject:
   m_ObjectHideFlags: 0
