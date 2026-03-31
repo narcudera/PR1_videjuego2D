@@ -80,7 +80,9 @@ public class mobpersonaje : MonoBehaviour
         }
    
         
+        bool disparo = InputSystem.actions["Attack"].WasPressedThisFrame();
 
+        
 
     }
 
