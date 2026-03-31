@@ -15,6 +15,9 @@ public class mobpersonaje : MonoBehaviour
     public float velocidad = 0.01f;
     public float impulsoSalto = 1.0f;
 
+    bool puedoSaltar = false;
+
+
     Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -46,15 +49,35 @@ public class mobpersonaje : MonoBehaviour
         }
        
 
+       RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.down,0.5f);
+
+       Debug.DrawRay(transform.position,Vector2.down*0.5f,Color.red);
+
+       if(hit.collider == true)
+       {
+        puedoSaltar = true;
+       }
+       else
+       {
+        puedoSaltar = false;
+       }
+    
+       
+       
         bool salto = InputSystem.actions["Jump"].WasPressedThisFrame();
 
-        if(salto == true)
+        if(salto == true && puedoSaltar == true)
         {
          Debug.Log("salto");    
          rb.AddForce(transform.up*impulsoSalto,ForceMode2D.Impulse);
-         
+         this.GetComponent<SpriteRenderer>().color = Color.red;
+        transform.localScale = new Vector3(1,1,1);
         }
-   
+        else
+        {
+        this.GetComponent<SpriteRenderer>().color = Color.white;
+        transform.localScale = new Vector3(2,2,1);
+        }
    
         
 
