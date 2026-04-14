@@ -20,20 +20,25 @@ public class mobpersonaje : MonoBehaviour
 
     Rigidbody2D rb;
 
+    Animator controlAnimacion;
+
+    GameObject respawn;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
 
     rb = GetComponent<Rigidbody2D>();
+    controlAnimacion = GetComponent<Animator>();
+    respawn = GameObject.Find("Respawn");
+    transform.position = respawn.transform.position;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-
-   
-
+       //
         Vector2 moveInput = InputSystem.actions["Move"].ReadValue<Vector2>();
     
         this.transform.Translate(moveInput.x*velocidad,0,0);
@@ -48,7 +53,15 @@ public class mobpersonaje : MonoBehaviour
             this.GetComponent<SpriteRenderer>().flipX = false; 
         }
        
-
+        if(moveInput.x != 0)
+        {
+        controlAnimacion.SetBool("activaCamina", true); 
+        }
+        else
+        {
+        controlAnimacion.SetBool("activaCamina", false);
+        }
+        //fgfggffg
        RaycastHit2D hit = Physics2D.Raycast(transform.position,Vector2.down,0.5f);
 
        Debug.DrawRay(transform.position,Vector2.down*0.5f,Color.red);
@@ -85,9 +98,21 @@ public class mobpersonaje : MonoBehaviour
         
 
     }
+void OnTriggerEnter2D(Collider2D col)
+¨   { 
+    Debug.Log("Trigger con: " + col.GameObject.name);
 
-  
+    if(col.GameObject.name == "dead")
+    {
+        GameManager.vidas -= 1;
+        transform.position = respawn.transform.position;
+    }
 
+    if(col.GameObject.name == "coin")
+    {
+        GameManager.puntos += 1;
+        Destroy(col.GameObject, 3.0f)
+    }
 
 
 
