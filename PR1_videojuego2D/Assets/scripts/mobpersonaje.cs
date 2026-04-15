@@ -4,13 +4,7 @@ using UnityEngine.InputSystem;
 public class mobpersonaje : MonoBehaviour
 {
 
-    int MiNumero = 1;
-
-    float MiNumeroFlotante = 0.8f;
-
-    string MiCadenaDeTexto = "Matadame Por Favor";
-
-    int MiVida = 0;
+   
 
     public float velocidad = 0.01f;
     public float impulsoSalto = 1.0f;
@@ -98,23 +92,16 @@ public class mobpersonaje : MonoBehaviour
         
 
     }
-void OnTriggerEnter2D(Collider2D col)
-¨   { 
-    Debug.Log("Trigger con: " + col.GameObject.name);
+   // void OnTriggerEnter2D(Collider2D col);
+   //{ 
+    //Debug.Log("Trigger col: " + col.GameObject.name);
 
-    if(col.GameObject.name == "dead")
-    {
-        GameManager.vidas -= 1;
-        transform.position = respawn.transform.position;
-    }
+   // if(col.GameObject.name == "dead")
+   // {
+       // GameManager.vidas -= 1;
+       // Debug.Log("Vidas restantes: " + GameManager.vidas);
+       // transform.position = respawn.transform.position
+   // }
 
-    if(col.GameObject.name == "coin")
-    {
-        GameManager.puntos += 1;
-        Destroy(col.GameObject, 3.0f)
-    }
-
-
-
-
+  // }
 }
