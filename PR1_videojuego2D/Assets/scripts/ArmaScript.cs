@@ -15,11 +15,11 @@ public class ArmaScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       // bool disparo = InputSystem.actions["Attack"].WasPressedThisFrame();
+        bool disparo = InputSystem.actions["Attack"].WasPressedThisFrame();
 
-      //  if(disparo)
-       // {
-      //      Instatiate(fuego, transform.position, Quanternion.identity);
-       // }
+       if(disparo)
+       {
+          Instantiate(fuego, transform.position, Quaternion.identity);
+       }
     }
 }

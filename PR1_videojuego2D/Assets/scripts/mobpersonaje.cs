@@ -18,6 +18,10 @@ public class mobpersonaje : MonoBehaviour
 
     GameObject respawn;
 
+    GameObject Spikes;
+
+    public bool direccionBalaDerecha = true;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -92,16 +96,20 @@ public class mobpersonaje : MonoBehaviour
         
 
     }
-   // void OnTriggerEnter2D(Collider2D col);
-   //{ 
-    //Debug.Log("Trigger col: " + col.GameObject.name);
+    void OnTriggerEnter2D(Collider2D col)
+   { 
+    Debug.Log("Trigger col: " + col.gameObject.name);
 
-   // if(col.GameObject.name == "dead")
-   // {
-       // GameManager.vidas -= 1;
-       // Debug.Log("Vidas restantes: " + GameManager.vidas);
-       // transform.position = respawn.transform.position
-   // }
+    if(col.gameObject.name == "dead")
+    {
+        Respawn();
+    }
 
-  // }
+   }
+   public void Respawn()
+   {
+     GameManager.vidas -= 1;
+        Debug.Log("Vidas restantes: " + GameManager.vidas);
+        transform.position = respawn.transform.position;
+   }
 }
