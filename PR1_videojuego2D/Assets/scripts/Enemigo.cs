@@ -32,6 +32,8 @@ public class Enemigo : MonoBehaviour
     void Update()
     {
        float distancia = Vector3.Distance(transform.position, personaje.transform.position);
+
+       
        
       if(distancia <= distaciaAtaque)
        {
@@ -81,7 +83,7 @@ public class Enemigo : MonoBehaviour
         {
             Debug.Log("dead");
             GameManager.vidas -= 1;
-            personaje.GetComponent<mobpersonaje>().Respawn;
+            //personaje.GetComponent<mobpersonaje>().Respawn;
         }
         Debug.Log(col.gameObject.name);
 

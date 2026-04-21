@@ -45,10 +45,12 @@ public class mobpersonaje : MonoBehaviour
         if(moveInput.x < 0)
         {
             this.GetComponent<SpriteRenderer>().flipX = true;
+            
         } 
         else if(moveInput.x > 0)
         {
             this.GetComponent<SpriteRenderer>().flipX = false; 
+           
         }
        
         if(moveInput.x != 0)
@@ -79,20 +81,20 @@ public class mobpersonaje : MonoBehaviour
 
         if(salto == true && puedoSaltar == true)
         {
-         Debug.Log("salto");    
-         rb.AddForce(transform.up*impulsoSalto,ForceMode2D.Impulse);
-         this.GetComponent<SpriteRenderer>().color = Color.red;
-        transform.localScale = new Vector3(1,1,1);
+         
+         rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0);    
+         rb.AddForce(transform.up * impulsoSalto, ForceMode2D.Impulse);
+         puedoSaltar = false;
+        
         }
-        else
-        {
-        this.GetComponent<SpriteRenderer>().color = Color.white;
-        transform.localScale = new Vector3(2,2,1);
-        }
+        
    
         
         bool disparo = InputSystem.actions["Attack"].WasPressedThisFrame();
-
+        if(disparo == true)
+        {
+            Debug.Log("disparo");
+        }
         
 
     }

@@ -14,19 +14,19 @@ public class CoinScript : MonoBehaviour
         
     }
 
- //void OnTriggerEnter2D(Collider2D col)
-//{
+  void OnTriggerEnter2D(Collider2D col)
+ {
 
-   // Debug.Log(col.GameObject.name);
+    Debug.Log(col.gameObject.name);
     
-    //if(col.GameObject.name == "Coin")
-    //{
-       // GameManager.puntos += valor;
-       // GameObject.GetComponent<Animator>().SetBool("obtenCoin", true);
+    if(col.gameObject.name == "Coin")
+    {
+         GameManager.puntos += valor;
+       gameObject.GetComponent<Animator>().SetBool("obtenCoin", true);
         
-       // Destroy(this.GameObject, 3.0f);
-    //}
-
+       Destroy(this.gameObject, 3.0f);
+    }
+ }
 }
 
 
