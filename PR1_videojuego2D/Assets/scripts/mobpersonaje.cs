@@ -104,7 +104,15 @@ public class mobpersonaje : MonoBehaviour
 
     if(col.gameObject.name == "dead")
     {
+        Muerte();
         Respawn();
+    }
+
+    void Muerte()
+
+    {
+        GameManager.vidas -= 1;
+        transform.position = respawn.transform.position;
     }
 
    }
