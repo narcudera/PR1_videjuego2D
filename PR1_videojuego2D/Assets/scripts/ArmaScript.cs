@@ -20,6 +20,7 @@ public class ArmaScript : MonoBehaviour
        if(disparo)
        {
           Instantiate(fuego, transform.position, Quaternion.identity);
+          AudioManager.Instance.SonarClipUnaVez (AudioManager.Instance.disparo);
        }
     }
 }

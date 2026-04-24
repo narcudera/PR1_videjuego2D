@@ -23,7 +23,7 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(Time.time);
+        //Debug.Log(Time.time);
         if(Time.time >= 0.5f)
         {
             Destroy(gameObject);

@@ -4,12 +4,32 @@ using TMPro;
 public class GameManager : MonoBehaviour
 {
 
+    public static GameManager Instance;
+
     public static int vidas = 3;
 
     public static int puntos = 0;
 
     GameObject vidasObj;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
+    void Awake()
+    {
+       
+
+        if(Instance != null && Instance != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+        else
+        {
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+    }
+    
+    
     void Start()
     {
         vidasObj = GameObject.Find("vidasObj");
