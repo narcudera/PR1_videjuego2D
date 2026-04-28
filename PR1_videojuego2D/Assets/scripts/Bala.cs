@@ -12,31 +12,29 @@ public class Bala : MonoBehaviour
 
     float heNacido;
     public float tiempoHastaDestruccion = 5.0f;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         personaje = GameObject.Find("personaje");
-        direccionPersonaje = personaje.GetComponent <mobpersonaje>().direccionBalaDerecha;
+        direccionPersonaje = personaje.GetComponent<mobpersonaje>().direccionBalaDerecha;
         heNacido = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        
-        transform.Rotate(0,0,-0.5f);
-        if(direccionPersonaje)
+        transform.Rotate(0, 0, -0.5f);
+        if (direccionPersonaje)
         {
-            Disparo.transform.Translate(velocidadBala*Time.deltaTime*0.01f, 0, 0);
-            
+            Disparo.transform.Translate(velocidadBala * Time.deltaTime * 0.01f, 0, 0);
         }
         else
         {
-            Disparo.transform.Translate(velocidadBala*Time.deltaTime*-0.01f, 0, 0);
+            Disparo.transform.Translate(velocidadBala * Time.deltaTime * -0.01f, 0, 0);
         }
 
-        if(Time.time >= heNacido + tiempoHastaDestruccion)
+        if (Time.time >= heNacido + tiempoHastaDestruccion)
         {
             Destroy(Disparo);
         }

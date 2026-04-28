@@ -3,7 +3,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    
+
     public AudioClip clipBotones;
 
     public AudioClip bandaSonora;
@@ -18,9 +18,7 @@ public class AudioManager : MonoBehaviour
 
     void Awake()
     {
-       
-
-        if(Instance != null && Instance != this)
+        if (Instance != null && Instance != this)
         {
             Destroy(this.gameObject);
         }
