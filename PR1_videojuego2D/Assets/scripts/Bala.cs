@@ -23,11 +23,7 @@ public class Bala : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(Time.time);
-        if(Time.time >= 0.5f)
-        {
-            Destroy(gameObject);
-        }
+
         
         transform.Rotate(0,0,-0.5f);
         if(direccionPersonaje)

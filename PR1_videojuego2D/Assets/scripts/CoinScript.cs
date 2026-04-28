@@ -13,11 +13,11 @@ public class CoinScript : MonoBehaviour
     {
         Debug.Log(col.gameObject.name);
 
-        if (col.gameObject.name == "Coin")
+        if (col.gameObject.name == "personaje")
         {
             GameManager.puntos += valor;
             AudioManager.Instance.SonarClipUnaVez(AudioManager.Instance.monedas);
-            gameObject.GetComponent<Animator>().SetBool("obtenCoin", true);
+            gameObject.GetComponent<Animator>().SetBool("obtenMoneda", true);
             Destroy(this.gameObject, 1.0f);
         }
     }

@@ -2,25 +2,21 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class ArmaScript : MonoBehaviour
-
-
 {
     public GameObject fuego;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    void Start() { }
 
     // Update is called once per frame
     void Update()
     {
         bool disparo = InputSystem.actions["Attack"].WasPressedThisFrame();
 
-       if(disparo)
-       {
-          Instantiate(fuego, transform.position, Quaternion.identity);
-          AudioManager.Instance.SonarClipUnaVez (AudioManager.Instance.disparo);
-       }
+        if (disparo)
+        {
+            Instantiate(fuego, transform.position, Quaternion.identity);
+            AudioManager.Instance.SonarClipUnaVez(AudioManager.Instance.disparo);
+        }
     }
 }

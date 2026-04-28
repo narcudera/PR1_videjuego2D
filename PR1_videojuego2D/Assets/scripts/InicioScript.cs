@@ -4,21 +4,17 @@ using UnityEngine.SceneManagement;
 public class InicioScript : MonoBehaviour
 {
     public GameObject panelInicio;
-    
-    public GameObject panelSettings;
-    
-    public AudioClip botonSonidoFX;
-    
-    GameObject AudioManagerObj;
 
-    AudioSource AudioManagerSource;
+    public GameObject panelSettings;
+
+    public AudioClip botonSonidoFX;
+
+    GameObject AudioManagerObj;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         panelSettings.SetActive(false);
-        AudioManagerSource = AudioManagerObj.GetComponent<AudioSource>();
-        
     }
 
     // Update is called once per frame
@@ -35,11 +31,10 @@ public class InicioScript : MonoBehaviour
         panelInicio.SetActive(false);
     }
 
-    public void exitSetting()
+    public void exitSettings()
     {
         panelSettings.SetActive(false);
         panelInicio.SetActive(true);
-        //AudioManagerObj.GetComponent<AudioSource>().SonarBoton();
     }
 
     public void exitGame()

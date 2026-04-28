@@ -338,7 +338,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1860050975}
         m_TargetAssemblyTypeName: InicioScript, Assembly-CSharp
-        m_MethodName: exitSetting
+        m_MethodName: showSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -629,7 +629,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1860050975}
         m_TargetAssemblyTypeName: InicioScript, Assembly-CSharp
-        m_MethodName: exitSetting
+        m_MethodName: exitSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -734,7 +734,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1089,7 +1089,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1171,7 +1171,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1404,7 +1404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1486,7 +1486,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1662,7 +1662,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1835491695
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1703,7 +1703,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 36796463986283239, guid: ceccc63b302e24440984ff299f4d4dda, type: 3}
+  m_Sprite: {fileID: 7776255403194780300, guid: d749c64be2a5f5142a992a34df68b3fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1750,8 +1750,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0c7846430b26a489cf2d59e06244a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InicioScript
-  panelInicio: {fileID: 1905792117}
-  panelSettings: {fileID: 1905792117}
+  panelInicio: {fileID: 704603030}
+  panelSettings: {fileID: 1835491694}
   botonSonidoFX: {fileID: 0}
 --- !u!4 &1860050976
 Transform:
@@ -2032,11 +2032,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b1ad90a898c7045950bc9357bd02e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  clipBotones: {fileID: 0}
+  clipBotones: {fileID: 8300000, guid: 3b678632ec8dbc741975cd03d3ab332d, type: 3}
   bandaSonora: {fileID: 8300000, guid: c9f6d8a67b8a5084aa3fd4c482bbddf2, type: 3}
   monedas: {fileID: 8300000, guid: 2d9be5f6982882f4495c031b7694cc6b, type: 3}
   muerte: {fileID: 0}
   fantasmas: {fileID: 0}
+  disparo: {fileID: 0}
 --- !u!4 &1905792120
 Transform:
   m_ObjectHideFlags: 0

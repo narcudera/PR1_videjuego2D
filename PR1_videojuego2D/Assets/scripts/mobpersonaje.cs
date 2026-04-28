@@ -14,7 +14,7 @@ public class mobpersonaje : MonoBehaviour
 
     GameObject respawn;
 
-    GameObject Spikes;
+    GameObject dead;
 
     public bool direccionBalaDerecha = true;
 
